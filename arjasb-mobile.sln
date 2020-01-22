@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "arjasb-mobile", "arjasb-mobile\arjasb-mobile.csproj", "{DA47A2BA-D53F-4CCB-813B-78F9CDC03D1E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{6AC2F940-E268-43A1-9262-06CE034FBBEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA47A2BA-D53F-4CCB-813B-78F9CDC03D1E}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{DA47A2BA-D53F-4CCB-813B-78F9CDC03D1E}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{DA47A2BA-D53F-4CCB-813B-78F9CDC03D1E}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{DA47A2BA-D53F-4CCB-813B-78F9CDC03D1E}.Debug|x86.ActiveCfg = Debug|x86
+		{DA47A2BA-D53F-4CCB-813B-78F9CDC03D1E}.Debug|x86.Build.0 = Debug|x86
+		{DA47A2BA-D53F-4CCB-813B-78F9CDC03D1E}.Release|Any CPU.ActiveCfg = Release|x86
+		{DA47A2BA-D53F-4CCB-813B-78F9CDC03D1E}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{DA47A2BA-D53F-4CCB-813B-78F9CDC03D1E}.Release|Mixed Platforms.Build.0 = Release|x86
+		{DA47A2BA-D53F-4CCB-813B-78F9CDC03D1E}.Release|x86.ActiveCfg = Release|x86
+		{DA47A2BA-D53F-4CCB-813B-78F9CDC03D1E}.Release|x86.Build.0 = Release|x86
+		{6AC2F940-E268-43A1-9262-06CE034FBBEA}.Debug|Any CPU.ActiveCfg = Debug
+		{6AC2F940-E268-43A1-9262-06CE034FBBEA}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{6AC2F940-E268-43A1-9262-06CE034FBBEA}.Debug|x86.ActiveCfg = Debug
+		{6AC2F940-E268-43A1-9262-06CE034FBBEA}.Release|Any CPU.ActiveCfg = Release
+		{6AC2F940-E268-43A1-9262-06CE034FBBEA}.Release|Mixed Platforms.ActiveCfg = Release
+		{6AC2F940-E268-43A1-9262-06CE034FBBEA}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

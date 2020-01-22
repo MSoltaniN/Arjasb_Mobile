@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DA47A2BA-D53F-4CCB-813B-78F9CDC03D1E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>arjasb_mobile</RootNamespace>
+    <AssemblyName>arjasb-mobile</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>mobilephone-1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9D43FB411E429182177B2220AE4893C056E1D71B</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>arjasb-mobile_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>arjasb_mobile.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>arjasb-key.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Synchronization, Version=1.0.0.0" />
+    <Reference Include="Microsoft.Synchronization.Data, Version=2.0.0.0" />
+    <Reference Include="Microsoft.Synchronization.Data.Server, Version=2.0.0.0" />
+    <Reference Include="Microsoft.Synchronization.Data.SqlServerCe, Version=2.0.0.0" />
+    <Reference Include="Microsoft.TeamFoundation.Client, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.TeamFoundation.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.TeamFoundation.Common.Library, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Client, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="mycontrol">
+      <HintPath>..\..\temp\CustomTextbox\mycontrol\mycontrol\bin\Debug\mycontrol.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="_arjasb_mobile_DBDataSet.Designer.cs">
+      <HintPath>obj\x86\Debug\TempPE\_arjasb_mobile_DBDataSet.Designer.cs.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="arjasb-mobile-DBCache.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>arjasb-mobile-DBCache.sync</DependentUpon>
+    </Compile>
+    <Compile Include="Common_DataSet.cs">
+      <DependentUpon>Common_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Common_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Common_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="linq.cs">
+      <DependentUpon>linq.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="OrderEditFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderEditFrm.Designer.cs">
+      <DependentUpon>OrderEditFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginFrm.Designer.cs">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderReportFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderReportFrm.Designer.cs">
+      <DependentUpon>OrderReportFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersianDate.cs" />
+    <Compile Include="PersonalInfDelFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonalInfDelFrm.Designer.cs">
+      <DependentUpon>PersonalInfDelFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectDevicesOfSrvman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectDevicesOfSrvman.Designer.cs">
+      <DependentUpon>SelectDevicesOfSrvman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="linq.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linq.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrm.Designer.cs">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PartAddFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartAddFrm.Designer.cs">
+      <DependentUpon>PartAddFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PartEditFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartEditFrm.Designer.cs">
+      <DependentUpon>PartEditFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalInfFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonalInfFrm.Designer.cs">
+      <DependentUpon>PersonalInfFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OrderAddFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderAddFrm.Designer.cs">
+      <DependentUpon>OrderAddFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectPartFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectPartFrm.Designer.cs">
+      <DependentUpon>SelectPartFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="testFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testFrm.Designer.cs">
+      <DependentUpon>testFrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="OrderEditFrm.resx">
+      <DependentUpon>OrderEditFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginFrm.resx">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderReportFrm.resx">
+      <DependentUpon>OrderReportFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonalInfDelFrm.resx">
+      <DependentUpon>PersonalInfDelFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectDevicesOfSrvman.resx">
+      <DependentUpon>SelectDevicesOfSrvman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartAddFrm.resx">
+      <DependentUpon>PartAddFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartEditFrm.resx">
+      <DependentUpon>PartEditFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectPartFrm.resx">
+      <DependentUpon>SelectPartFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testFrm.resx">
+      <DependentUpon>testFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="arjasb-key.pfx" />
+    <None Include="arjasb-mobile-DBCache.sync">
+      <Generator>MSDataSyncGenerator</Generator>
+      <LastGenOutput>arjasb-mobile-DBCache.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="arjasb-mobile_TemporaryKey.pfx" />
+    <None Include="Common_DataSet.xsc">
+      <DependentUpon>Common_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Common_DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Common_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Common_DataSet.xss">
+      <DependentUpon>Common_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="linq.dbml.layout">
+      <DependentUpon>linq.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="MainFrm.resx">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonalInfFrm.resx">
+      <DependentUpon>PersonalInfFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="OrderAddFrm.resx">
+      <DependentUpon>OrderAddFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="linq.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linq.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.10.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2008 Express</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="SAP.CrystalReports14.NET.2.0">
+      <Visible>False</Visible>
+      <ProductName>SAP Crystal Reports Runtime Engine for .NET Framework 4.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="arjasb.ico" />
+    <Content Include="mobilephone-1.ico" />
+    <Content Include="SQLScripts\arjasb-mobile-DBCache.dbo.authenticatetbl.sql" />
+    <Content Include="SQLScripts\arjasb-mobile-DBCache.dbo.Defecttbl.sql" />
+    <Content Include="SQLScripts\arjasb-mobile-DBCache.dbo.DeviceJoncDefecttbl.sql" />
+    <Content Include="SQLScripts\arjasb-mobile-DBCache.dbo.Devicetbl.sql" />
+    <Content Include="SQLScripts\arjasb-mobile-DBCache.dbo.ordertbl.sql" />
+    <Content Include="SQLScripts\arjasb-mobile-DBCache.dbo.ownertbl.sql" />
+    <Content Include="SQLUndoScripts\arjasb-mobile-DBCache.dbo.authenticatetbl.disable.sql" />
+    <Content Include="SQLUndoScripts\arjasb-mobile-DBCache.dbo.Defecttbl.disable.sql" />
+    <Content Include="SQLUndoScripts\arjasb-mobile-DBCache.dbo.DeviceJoncDefecttbl.disable.sql" />
+    <Content Include="SQLUndoScripts\arjasb-mobile-DBCache.dbo.Devicetbl.disable.sql" />
+    <Content Include="SQLUndoScripts\arjasb-mobile-DBCache.dbo.ordertbl.disable.sql" />
+    <Content Include="SQLUndoScripts\arjasb-mobile-DBCache.dbo.ownertbl.disable.sql" />
+    <None Include="Resources\Re-exposure of lvback2.gif" />
+    <None Include="Resources\Re-exposure of lvback1.gif" />
+    <None Include="Resources\Re-exposure of lvback.gif" />
+    <None Include="Resources\icon_key.gif" />
+    <None Include="Resources\lvback.gif" />
+    <None Include="Resources\small form image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

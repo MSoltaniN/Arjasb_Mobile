@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="linq">
+  <DataContextMoniker Name="/linqDataContext" />
+  <nestedChildShapes>
+    <classShape Id="0749639f-ac03-4287-b0da-e36d5ec00224" absoluteBounds="1.5, 4, 2, 1.3862939453125">
+      <DataClassMoniker Name="/linqDataContext/authenticatetbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="621031e7-910f-4ffa-af56-4c9c21e5494e" absoluteBounds="1.5150000000000006, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d2af91be-99a7-46f9-93aa-38033a5fda29" absoluteBounds="8.75, 4, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/linqDataContext/Defecttbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="33fcfff3-04a6-4d01-80ad-9189868a5e9e" absoluteBounds="8.765, 4.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="74557d97-3927-4f01-a3be-dc3d2bbb800a" absoluteBounds="8, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/linqDataContext/DeviceJoncDefecttbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="decef310-ec1e-4ad0-9cdd-fa8d98c51808" absoluteBounds="8.015, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.3750005 : 4); (10.3750005 : 1.19314697265625); (10 : 1.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/linqDataContext/Defecttbl/Defecttbl_DeviceJoncDefecttbl" />
+      <nodes>
+        <classShapeMoniker Id="d2af91be-99a7-46f9-93aa-38033a5fda29" />
+        <classShapeMoniker Id="74557d97-3927-4f01-a3be-dc3d2bbb800a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="cd5807a0-5997-4826-8e1d-2c6c9bf8fa69" absoluteBounds="8, 2.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/linqDataContext/Devicetbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="62d15bf7-1efc-4341-a387-d5fbcb2c76f6" absoluteBounds="8.015, 2.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9 : 2.125); (9 : 1.8862939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/linqDataContext/Devicetbl/Devicetbl_DeviceJoncDefecttbl" />
+      <nodes>
+        <classShapeMoniker Id="cd5807a0-5997-4826-8e1d-2c6c9bf8fa69" />
+        <classShapeMoniker Id="74557d97-3927-4f01-a3be-dc3d2bbb800a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a404a592-d162-4345-b7ea-6be2bbd972f5" absoluteBounds="1.5, 0.5, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/linqDataContext/ordertbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="66f9c37f-f386-48eb-831b-61eb60ce78bc" absoluteBounds="1.5150000000000006, 0.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8 : 2.140625); (3.5 : 2.140625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/linqDataContext/Devicetbl/Devicetbl_ordertbl" />
+      <nodes>
+        <classShapeMoniker Id="cd5807a0-5997-4826-8e1d-2c6c9bf8fa69" />
+        <classShapeMoniker Id="a404a592-d162-4345-b7ea-6be2bbd972f5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="56424c33-83a3-4287-9379-fd32523a7542" absoluteBounds="4.125, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/linqDataContext/ownertbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ac92a6f-a2bd-4b99-93e3-47471c96e037" absoluteBounds="4.1400000000000006, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.125 : 1.19314697265625); (3.5 : 1.19314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/linqDataContext/ownertbl/ownertbl_ordertbl" />
+      <nodes>
+        <classShapeMoniker Id="56424c33-83a3-4287-9379-fd32523a7542" />
+        <classShapeMoniker Id="a404a592-d162-4345-b7ea-6be2bbd972f5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9f889a71-e0b7-45a0-a724-48eda60d986b" absoluteBounds="5.875, 2.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/linqDataContext/Part" />
+      <nestedChildShapes>
+        <elementListCompartment Id="040ff29b-0183-4d89-adfa-670cf3e5d007" absoluteBounds="5.8900000000000006, 2.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.5 : 2.28125); (5.875 : 2.28125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/linqDataContext/ordertbl/ordertbl_Part" />
+      <nodes>
+        <classShapeMoniker Id="a404a592-d162-4345-b7ea-6be2bbd972f5" />
+        <classShapeMoniker Id="9f889a71-e0b7-45a0-a724-48eda60d986b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="932768a3-6a09-4de6-9d73-39dd2551c1a6" absoluteBounds="3.75, 2.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/linqDataContext/serviceman" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fefbcc19-9b0d-41a3-a933-3085061a82dc" absoluteBounds="3.7650000000000006, 2.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.75 : 3.09215413411458); (3.5 : 3.09215413411458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/linqDataContext/serviceman/serviceman_ordertbl" />
+      <nodes>
+        <classShapeMoniker Id="932768a3-6a09-4de6-9d73-39dd2551c1a6" />
+        <classShapeMoniker Id="a404a592-d162-4345-b7ea-6be2bbd972f5" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

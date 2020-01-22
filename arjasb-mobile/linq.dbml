@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="arjasb-mobile-DB" Class="linqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\;Initial Catalog=ArjasbMobile-DB;Integrated Security=True" SettingsObjectName="arjasb_mobile.Properties.Settings" SettingsPropertyName="arjasb_mobile_DBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.authenticatetbl" Member="authenticatetbls">
+    <Type Name="authenticatetbl">
+      <Column Name="AuthenticateId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="users" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Defecttbl" Member="Defecttbls">
+    <Type Name="Defecttbl">
+      <Column Name="DefectId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DefectType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Defect" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Solution" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="UsefullFileAdr" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="UsefullUrls" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MounthPeak" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Defecttbl_DeviceJoncDefecttbl" Member="DeviceJoncDefecttbls" ThisKey="DefectId" OtherKey="DefectId" Type="DeviceJoncDefecttbl" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DeviceJoncDefecttbl" Member="DeviceJoncDefecttbls">
+    <Type Name="DeviceJoncDefecttbl">
+      <Column Name="DevJoncDefId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DeviceId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DefectId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Defecttbl_DeviceJoncDefecttbl" Member="Defecttbl" ThisKey="DefectId" OtherKey="DefectId" Type="Defecttbl" IsForeignKey="true" />
+      <Association Name="Devicetbl_DeviceJoncDefecttbl" Member="Devicetbl" ThisKey="DeviceId" OtherKey="DeviceId" Type="Devicetbl" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Devicetbl" Member="Devicetbls">
+    <Type Name="Devicetbl">
+      <Column Name="DeviceId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DeviceManufacturer" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DeviceName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MounthPeak" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Devicetbl_DeviceJoncDefecttbl" Member="DeviceJoncDefecttbls" ThisKey="DeviceId" OtherKey="DeviceId" Type="DeviceJoncDefecttbl" />
+      <Association Name="Devicetbl_ordertbl" Member="ordertbls" ThisKey="DeviceId" OtherKey="DeviceId" Type="ordertbl" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ordertbl" Member="ordertbls">
+    <Type Name="ordertbl">
+      <Column Name="OrderId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OwnerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeviceId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SrvId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RAM" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Battery" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="charger" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TakeDate" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="CurrentStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RepairedDate" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="payment" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="expretion" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Association Name="ordertbl_Part" Member="Parts" ThisKey="OrderId" OtherKey="OrderId" Type="Part" />
+      <Association Name="Devicetbl_ordertbl" Member="Devicetbl" ThisKey="DeviceId" OtherKey="DeviceId" Type="Devicetbl" IsForeignKey="true" />
+      <Association Name="ownertbl_ordertbl" Member="ownertbl" ThisKey="OwnerId" OtherKey="OwnerId" Type="ownertbl" IsForeignKey="true" />
+      <Association Name="serviceman_ordertbl" Member="serviceman" ThisKey="SrvId" OtherKey="SrvId" Type="serviceman" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ownertbl" Member="ownertbls">
+    <Type Name="ownertbl">
+      <Column Name="OwnerId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="owner" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Association Name="ownertbl_ordertbl" Member="ordertbls" ThisKey="OwnerId" OtherKey="OwnerId" Type="ordertbl" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Parts" Member="Parts">
+    <Type Name="Part">
+      <Column Name="PartId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PartName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="alarm" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AssembleDate" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="MounthPeak" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ordertbl_Part" Member="ordertbl" ThisKey="OrderId" OtherKey="OrderId" Type="ordertbl" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.serviceman" Member="servicemans">
+    <Type Name="serviceman">
+      <Column Name="SrvId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="expert" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Association Name="serviceman_ordertbl" Member="ordertbls" ThisKey="SrvId" OtherKey="SrvId" Type="ordertbl" />
+    </Type>
+  </Table>
+  <Function Name="dbo.ApplyDefect" Method="ApplyDefect">
+    <Parameter Name="DefectType" Parameter="defectType" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Defect" Parameter="defect" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Solution" Parameter="solution" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="UsefullFileAdr" Parameter="usefullFileAdr" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="UsefullUrls" Parameter="usefullUrls" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ApplyOrderOwnerDeviceTBL" Method="ApplyOrderOwnerDeviceTBL">
+    <Parameter Name="SrvId" Parameter="srvId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RAM" Parameter="rAM" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Battery" Parameter="battery" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Charger" Parameter="charger" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="CurrentStatus" Parameter="currentStatus" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="TakeDate" Parameter="takeDate" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="payment" Type="System.Int32" DbType="Int" />
+    <Parameter Name="expretion" Type="System.String" DbType="NVarChar(70)" />
+    <Parameter Name="owner" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PhoneNumber" Parameter="phoneNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DeviceManufacturer" Parameter="deviceManufacturer" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DeviceName" Parameter="deviceName" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ApplyPart" Method="ApplyPart">
+    <Parameter Name="PartName" Parameter="partName" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="price" Type="System.Int32" DbType="Int" />
+    <Parameter Name="alarm" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ApplySrvman" Method="ApplySrvman">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="LastName" Parameter="lastName" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="expert" Type="System.String" DbType="NVarChar(15)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ChangeDeviceSrvMan" Method="ChangeDeviceSrvMan">
+    <Parameter Name="OrderId" Parameter="orderId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SrvId" Parameter="srvId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ChangeDeviceState" Method="ChangeDeviceState">
+    <Parameter Name="OrderId" Parameter="orderId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="b" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="RepairedDate" Parameter="repairedDate" Type="System.String" DbType="NVarChar(15)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ChechOrderId" Method="ChechOrderId">
+    <Parameter Name="OrderId" Parameter="orderId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ChechOrderIdResult">
+      <Column Name="OrderId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DeleteOrder" Method="DeleteOrder">
+    <Parameter Name="OrderId" Parameter="orderId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeletePart" Method="DeletePart">
+    <Parameter Name="PartId" Parameter="partId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DelSrvman" Method="DelSrvman">
+    <Parameter Name="SrvId" Parameter="srvId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EditOrder" Method="EditOrder">
+    <Parameter Name="OrderId" Parameter="orderId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SrvId" Parameter="srvId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RAM" Parameter="rAM" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Battery" Parameter="battery" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Charger" Parameter="charger" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="TakeDate" Parameter="takeDate" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="payment" Type="System.Int32" DbType="Int" />
+    <Parameter Name="expretion" Type="System.String" DbType="NVarChar(70)" />
+    <Parameter Name="owner" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PhoneNumber" Parameter="phoneNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DeviceManufacturer" Parameter="deviceManufacturer" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DeviceName" Parameter="deviceName" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EditPart" Method="EditPart">
+    <Parameter Name="PartId" Parameter="partId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PartName" Parameter="partName" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="price" Type="System.Int32" DbType="Int" />
+    <Parameter Name="alarm" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.FreeDeviceSrvMan" Method="FreeDeviceSrvMan">
+    <Parameter Name="OrderId" Parameter="orderId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SrvId" Parameter="srvId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SelectPartsforDevice" Method="SelectPartsforDevice">
+    <Parameter Name="PartId" Parameter="partId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="OrderId" Parameter="orderId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AssembleDate" Parameter="assembleDate" Type="System.String" DbType="NVarChar(15)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ShearchPart" Method="ShearchPart">
+    <Parameter Name="PartName" Parameter="partName" Type="System.String" DbType="NVarChar(30)" />
+    <ElementType Name="ShearchPartResult">
+      <Column Name="[شماره قطعه]" Member="شماره_قطعه" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[نام قطعه]" Member="نام_قطعه" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="قیمت" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="هشدار" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[تاریخ استفاده]" Member="تاریخ_استفاده" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowDefectSolution" Method="ShowDefectSolution">
+    <Parameter Name="DeviceName" Parameter="deviceName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DefectType" Parameter="defectType" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Defect" Parameter="defect" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="ShowDefectSolutionResult">
+      <Column Name="Defect" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Solution" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="UsefullFileAdr" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="UsefullUrls" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowDeviceDefect" Method="ShowDeviceDefect">
+    <Parameter Name="DefectType" Parameter="defectType" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DeviceName" Parameter="deviceName" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="ShowDeviceDefectResult">
+      <Column Name="ایراد" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="[راه حل]" Member="راه_حل" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="[لینک های مفید]" Member="لینک_های_مفید" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="[فایل های مورد نیاز]" Member="فایل_های_مورد_نیاز" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowDeviceManufacturer" Method="ShowDeviceManufacturer">
+    <ElementType Name="ShowDeviceManufacturerResult">
+      <Column Name="DeviceManufacturer" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowDeviceNames" Method="ShowDeviceNames">
+    <ElementType Name="ShowDeviceNamesResult">
+      <Column Name="DeviceName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowDeviceNamesbyCategorizing" Method="ShowDeviceNamesbyCategorizing">
+    <Parameter Name="DeviceManufacturer" Parameter="deviceManufacturer" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="ShowDeviceNamesbyCategorizingResult">
+      <Column Name="DeviceName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowDeviceNSofSrvman" Method="ShowDeviceNSofSrvman">
+    <ElementType Name="ShowDeviceNSofSrvmanResult">
+      <Column Name="[شماره سفارش]" Member="شماره_سفارش" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[نام گوشی]" Member="نام_گوشی" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[نام قطعه]" Member="نام_قطعه" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="توضیحات" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowDeviceReapairing" Method="ShowDeviceReapairing">
+    <Parameter Name="SrvId" Parameter="srvId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ShowDeviceReapairingResult">
+      <Column Name="[شماره سفارش]" Member="شماره_سفارش" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[نام گوشی]" Member="نام_گوشی" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[نام قطعه]" Member="نام_قطعه" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="توضیحات" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowDeviceRepaired" Method="ShowDeviceRepaired">
+    <Parameter Name="SrvId" Parameter="srvId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ShowDeviceRepairedResult">
+      <Column Name="[شماره سفارش]" Member="شماره_سفارش" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[نام گوشی]" Member="نام_گوشی" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[نام قطعه]" Member="نام_قطعه" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="توضیحات" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowDeviceSofSrvman" Method="ShowDeviceSofSrvman">
+    <Parameter Name="SrvId" Parameter="srvId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ShowDeviceSofSrvmanResult">
+      <Column Name="[شماره سفارش]" Member="شماره_سفارش" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[نام گوشی]" Member="نام_گوشی" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[نام قطعه]" Member="نام_قطعه" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="توضیحات" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowOrderMenu" Method="ShowOrderMenu">
+    <Parameter Name="OrderId" Parameter="orderId" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="DeviceName" Parameter="deviceName" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="owner" Type="System.String" DbType="NVarChar(30)" />
+    <ElementType Name="ShowOrderMenuResult">
+      <Column Name="[شماره سفارش]" Member="شماره_سفارش" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[نام گوشی]" Member="نام_گوشی" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[نام مشتری]" Member="نام_مشتری" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="رم" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="شارژر" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="باطری" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="[تاریخ دریافت]" Member="تاریخ_دریافت" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="[تاریخ تعمیر]" Member="تاریخ_تعمیر" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="پیش‎پرداخت" Member="پیش_پرداخت" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="توضیحات" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="[نام قطعه]" Member="نام_قطعه" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="[نام تعمیرکار]" Member="نام_تعمیرکار" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="[ن خ تعمیرکار]" Member="ن_خ_تعمیرکار" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowParts" Method="ShowParts">
+    <ElementType Name="ShowPartsResult">
+      <Column Name="[شماره قطعه]" Member="شماره_قطعه" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[نام قطعه]" Member="نام_قطعه" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="قیمت" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="هشدار" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[تاریخ مصرف]" Member="تاریخ_مصرف" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowPartsforDevice" Method="ShowPartsforDevice">
+    <ElementType Name="ShowPartsforDeviceResult">
+      <Column Name="[نام قطعه]" Member="نام_قطعه" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowSrvman" Method="ShowSrvman">
+    <ElementType Name="ShowSrvmanResult">
+      <Column Name="شماره" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="نام" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="[نام خانوادگی]" Member="نام_خانوادگی" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowSrvmanExpert" Method="ShowSrvmanExpert">
+    <ElementType Name="ShowSrvmanExpertResult">
+      <Column Name="expert" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UpdateExpr" Method="UpdateExpr">
+    <Parameter Name="OrderId" Parameter="orderId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="expretion" Type="System.String" DbType="NVarChar(70)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GivePartIdTakePartName" Method="GivePartIdTakePartName" IsComposable="true">
+    <Parameter Name="PartName" Parameter="partName" Type="System.String" DbType="NVarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.MaxOrderId" Method="MaxOrderId" IsComposable="true">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.MaxPartId" Method="MaxPartId" IsComposable="true">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.MaxSrvId" Method="MaxSrvId" IsComposable="true">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ShowDefectTypebyCategorizing" Method="ShowDefectTypebyCategorizing">
+    <Parameter Name="DeviceName" Parameter="deviceName" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="ShowDefectTypebyCategorizingResult">
+      <Column Name="DefectType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowDefectType" Method="ShowDefectType">
+    <ElementType Name="ShowDefectTypeResult">
+      <Column Name="DefectType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ApplyDevice" Method="ApplyDevice">
+    <Parameter Name="DeviceManufacturer" Parameter="deviceManufacturer" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DeviceName" Parameter="deviceName" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
